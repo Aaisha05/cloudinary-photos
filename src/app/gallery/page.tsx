@@ -15,7 +15,7 @@ export default async function GalleryPage(){
     .sort_by("created_at","desc")
     .max_results(10)
     .execute() as {resources: SearchResult[]};
-    console.log(results);
+    console.log("results",results);
 
 
     return (
@@ -32,6 +32,7 @@ export default async function GalleryPage(){
                     <CloudinaryImage
                     key={result.public_id}
                     src={result.public_id}
+                    publicId={result.public_id}
                     width="400"
                     height="300"
                     alt="an image of smthg"
